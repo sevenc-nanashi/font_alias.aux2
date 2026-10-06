@@ -1,0 +1,23 @@
+#:schema .aviutl2-cli/aviutl2.schema.json
+
+[project]
+id = "font_alias.aux2"
+name = "フォントエイリアス"
+version = "0.1.0"
+
+[artifacts.font_alias]
+destination = "Plugin/font_alias.aux2"
+
+[artifacts.font_alias.profiles.debug]
+build = "cargo build"
+source = "target/debug/font_alias.dll"
+
+[artifacts.font_alias.profiles.release]
+build = "cargo build --release"
+source = "target/release/font_alias.dll"
+
+[development]
+aviutl2_version = "latest"
+
+[release]
+output_dir = "release"

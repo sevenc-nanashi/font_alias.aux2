@@ -1,0 +1,19 @@
+[package]
+name = "font_alias-aux2"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "font_alias"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+aviutl2 = "0.48.0"
+aviutl2-eframe = "0.48.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+windows = { version = "0.62.2", features = ["Win32_Graphics_DirectWrite", "Win32_Storage_FileSystem"] }
+
+[patch.crates-io]
+aviutl2 = { git = "https://github.com/sevenc-nanashi/aviutl2-rs", rev = "d54bdae7456d89ce74b3a315d54adb5444048668" }
