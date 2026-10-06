@@ -21,3 +21,8 @@ aviutl2_version = "latest"
 
 [release]
 output_dir = "release"
+
+[catalog]
+id = "sevenc-nanashi.font_alias-aux2"
+download_repo = { owner = "sevenc-nanashi", repo = "font_alias.aux2" }
+license_path = "./LICENSE"
