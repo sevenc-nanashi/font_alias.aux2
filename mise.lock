@@ -2,6 +2,11 @@
 
 lockfile_version = 2
 
+[[tools."cargo:cargo-edit"]]
+version = "0.13.13"
+backend = "cargo:cargo-edit"
+specifiers = ["latest"]
+
 [[tools."github:sevenc-nanashi/aviutl2-cli"]]
 version = "0.11.0"
 backend = "github:sevenc-nanashi/aviutl2-cli"
