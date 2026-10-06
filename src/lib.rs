@@ -24,7 +24,10 @@ impl GenericPlugin for FontAliasPlugin {
             .try_init()
             .map_err(|error| anyhow::anyhow!("ログを初期化できません: {error}"))?;
         let data = aviutl2::config::app_data_path();
-        let path = data.join("font_alias.json");
+        let path = process_path::get_dylib_path()
+            .unwrap()
+            .with_file_name("font_alias.json")
+            .to_owned();
         let mut warnings = Vec::new();
         let catalog = Arc::new(fonts::Catalog::load(&data.join("Font"), &mut warnings)?);
         let (aliases, load_error) = match settings::load(&path) {

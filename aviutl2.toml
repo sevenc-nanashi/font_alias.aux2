@@ -6,7 +6,7 @@ name = "フォントエイリアス"
 version = "0.1.0"
 
 [artifacts.font_alias]
-destination = "Plugin/font_alias.aux2"
+destination = "Plugin/font_alias-aux2/font_alias.aux2"
 
 [artifacts.font_alias.profiles.debug]
 build = "cargo build"

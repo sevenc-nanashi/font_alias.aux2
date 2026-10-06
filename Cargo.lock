@@ -898,6 +898,7 @@ dependencies = [
  "anyhow",
  "aviutl2",
  "aviutl2-eframe",
+ "process_path",
  "serde",
  "serde_json",
  "windows",
