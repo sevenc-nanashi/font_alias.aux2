@@ -1,7 +1,7 @@
 #:schema .aviutl2-cli/aviutl2.schema.json
 
 [project]
-id = "font_alias.aux2"
+id = "sevenc-nanashi.font_alias-aux2"
 name = "フォントエイリアス"
 version = "0.1.0"
 
