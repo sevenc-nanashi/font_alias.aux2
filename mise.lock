@@ -6,3 +6,28 @@ lockfile_version = 2
 version = "0.11.0"
 backend = "github:sevenc-nanashi/aviutl2-cli"
 specifiers = ["latest"]
+
+[tools."github:sevenc-nanashi/aviutl2-cli"."platforms.linux-arm64"]
+checksum = "sha256:a7a441f723f086595865ce7ea64b41a8c9db4a970d8fa7b96172aa06f8d0368a"
+url = "https://github.com/sevenc-nanashi/aviutl2-cli/releases/download/0.11.0/au2-v0.11.0-linux"
+url_api = "https://api.github.com/repos/sevenc-nanashi/aviutl2-cli/releases/assets/490142205"
+
+[tools."github:sevenc-nanashi/aviutl2-cli"."platforms.linux-arm64-musl"]
+checksum = "sha256:a7a441f723f086595865ce7ea64b41a8c9db4a970d8fa7b96172aa06f8d0368a"
+url = "https://github.com/sevenc-nanashi/aviutl2-cli/releases/download/0.11.0/au2-v0.11.0-linux"
+url_api = "https://api.github.com/repos/sevenc-nanashi/aviutl2-cli/releases/assets/490142205"
+
+[tools."github:sevenc-nanashi/aviutl2-cli"."platforms.linux-x64"]
+checksum = "sha256:a7a441f723f086595865ce7ea64b41a8c9db4a970d8fa7b96172aa06f8d0368a"
+url = "https://github.com/sevenc-nanashi/aviutl2-cli/releases/download/0.11.0/au2-v0.11.0-linux"
+url_api = "https://api.github.com/repos/sevenc-nanashi/aviutl2-cli/releases/assets/490142205"
+
+[tools."github:sevenc-nanashi/aviutl2-cli"."platforms.linux-x64-musl"]
+checksum = "sha256:a7a441f723f086595865ce7ea64b41a8c9db4a970d8fa7b96172aa06f8d0368a"
+url = "https://github.com/sevenc-nanashi/aviutl2-cli/releases/download/0.11.0/au2-v0.11.0-linux"
+url_api = "https://api.github.com/repos/sevenc-nanashi/aviutl2-cli/releases/assets/490142205"
+
+[tools."github:sevenc-nanashi/aviutl2-cli"."platforms.windows-x64"]
+checksum = "sha256:13cc7a3c1f4e9f7de26ade89b40730780c0d816183e6deb1605c151b7288e847"
+url = "https://github.com/sevenc-nanashi/aviutl2-cli/releases/download/0.11.0/au2-v0.11.0-windows.exe"
+url_api = "https://api.github.com/repos/sevenc-nanashi/aviutl2-cli/releases/assets/490142206"

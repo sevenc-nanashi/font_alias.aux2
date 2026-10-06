@@ -125,11 +125,11 @@ impl Catalog {
             if count == 0 {
                 return Ok(None);
             }
-            Ok(Some(
+            Ok(Some(crate::alias_collection::wrap(
                 factory3
                     .CreateFontCollectionFromFontSet(&builder.CreateFontSet()?)?
                     .cast()?,
-            ))
+            )))
         }
     }
 

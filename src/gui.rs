@@ -2,7 +2,7 @@ use crate::{
     fonts::Catalog,
     settings::{self, Alias},
 };
-use aviutl2_eframe::{AviUtl2EframeHandle, eframe, egui};
+use aviutl2_eframe::{eframe, egui};
 use std::{path::PathBuf, sync::Arc};
 
 pub struct App {
@@ -18,7 +18,6 @@ pub struct App {
     pub selected_family: Option<usize>,
     pub selected_alias: Option<usize>,
     pub name: String,
-    pub handle: AviUtl2EframeHandle,
 }
 
 impl App {
@@ -78,14 +77,9 @@ impl App {
 impl eframe::App for App {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ui, |ui| {
-          egui::ScrollArea::vertical().id_salt("content").show(ui, |ui| {
+          egui::ScrollArea::vertical().auto_shrink([false, true]).id_salt("content").show(ui, |ui| {
             ui.horizontal_wrapped(|ui| {
-                let heading = ui.heading("font_alias.aux2");
-                if heading.secondary_clicked()
-                    && let Err(error) = self.handle.show_context_menu()
-                {
-                    self.message = Some(format!("{error:#}"));
-                }
+                ui.heading("font_alias.aux2");
                 if ui.add_enabled(self.load_error.is_none(), egui::Button::new("保存")).clicked() {
                     self.save();
                 }
@@ -115,7 +109,7 @@ impl eframe::App for App {
             }
             if !self.warnings.is_empty() {
                 egui::CollapsingHeader::new(format!("起動時の警告 ({})", self.warnings.len())).show(ui, |ui| {
-                    egui::ScrollArea::vertical().id_salt("warnings").max_height(100.0).show(ui, |ui| {
+                    egui::ScrollArea::vertical().auto_shrink([false, true]).id_salt("warnings").max_height(100.0).show(ui, |ui| {
                         for warning in &self.warnings {
                             ui.colored_label(ui.visuals().warn_fg_color, warning);
                         }
@@ -151,7 +145,7 @@ impl eframe::App for App {
             let matching: Vec<_> = self.catalog.families.iter().enumerate().filter(|(_, family)| {
                 family.names.iter().any(|name| name.to_lowercase().contains(&query))
             }).collect();
-            egui::ScrollArea::vertical().id_salt("families").max_height(180.0).show_rows(
+            egui::ScrollArea::vertical().auto_shrink([false, true]).id_salt("families").max_height(180.0).show_rows(
                 ui, ui.text_style_height(&egui::TextStyle::Body), matching.len(), |ui, range| {
                     for row in range {
                         let (index, family) = matching[row];
@@ -165,7 +159,7 @@ impl eframe::App for App {
             ui.label(format!("設定済みのエイリアス ({})", self.aliases.len()));
             let mut edit = None;
             let mut delete = None;
-            egui::ScrollArea::vertical().id_salt("aliases").max_height(240.0).show(ui, |ui| {
+            egui::ScrollArea::vertical().auto_shrink([false, true]).id_salt("aliases").max_height(240.0).show(ui, |ui| {
                 for (index, alias) in self.aliases.iter().enumerate() {
                     ui.horizontal_wrapped(|ui| {
                         if ui.selectable_label(self.selected_alias == Some(index), &alias.name).clicked() {
