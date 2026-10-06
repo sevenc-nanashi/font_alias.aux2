@@ -2,7 +2,7 @@
 
 [project]
 id = "sevenc-nanashi.font_alias-aux2"
-name = "フォントエイリアス"
+name = "font_alias.aux2"
 version = "0.1.0"
 
 [artifacts.font_alias]
